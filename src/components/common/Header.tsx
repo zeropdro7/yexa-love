@@ -152,8 +152,12 @@ function DesktopNavigation(
     <nav {...props}>
       <ul className="flex rounded-full bg-kawaii-lavender/80 px-3 text-sm font-medium text-gray-800 shadow-lg ring-1 ring-turquoise-neutral/20 backdrop-blur-sm hover:bg-kawaii-lavender/90 transition">
         <NavItem href="/">🌸 Fechas</NavItem>
-        <NavItem href="/about" disabled>💖 Nosotros</NavItem>
-        <NavItem href="/gallery" disabled>📸 Galería</NavItem>
+        <NavItem href="/about" disabled>
+          💖 Nosotros
+        </NavItem>
+        <NavItem href="/gallery" disabled>
+          📸 Galería
+        </NavItem>
       </ul>
     </nav>
   )

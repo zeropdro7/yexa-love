@@ -1,0 +1,42 @@
+@keyframes heart-bounce {
+  0% {
+    transform: translateY(0) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(-80px)
+      scale(calc(var(--size) * 0.9)) rotate(5deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-160px) scale(var(--size))
+      rotate(-3deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-240px)
+      scale(calc(var(--size) * 1.1)) rotate(2deg);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(-320px)
+      scale(calc(var(--size) * 0.8)) rotate(-1deg);
+    opacity: 0.6;
+  }
+  90% {
+    transform: translateY(-400px)
+      scale(calc(var(--size) * 0.6)) rotate(1deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-480px)
+      scale(calc(var(--size) * 0.4)) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.heart-animation {
+  animation: heart-bounce 2s ease-out forwards;
+  animation-delay: var(--delay);
+  will-change: transform, opacity;
+}
