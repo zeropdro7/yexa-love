@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💕 YxaLov - Special Dates Blog
 
-## Getting Started
+Un blog romántico para celebrar fechas especiales, creado con amor para mi novia. Este proyecto combina tecnología moderna con diseño romántico y toques otaku.
 
-First, run the development server:
+## ✨ Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🌸 **Fechas Especiales**: San Valentín, Día de la Primavera y más
+- 🎨 **Diseño Romántico**: Gradientes suaves, animaciones delicadas
+- 🇯🇵 **Toque Otaku**: Frases en japonés y referencias de anime
+- 📱 **Responsive**: Perfectamente adaptado a todos los dispositivos
+- ⚡ **Performance**: Optimizado con Next.js 15 y React 19
+
+## 🛠️ Tecnologías
+
+- **Framework**: Next.js 15.5.3
+- **React**: 19.1.0
+- **Styling**: Tailwind CSS 4.1.13
+- **Class Management**: clsx 2.1.1
+- **Fuentes**: Google Fonts (Roboto, Great Vibes, Press Start 2P)
+- **TypeScript**: Para tipado estático
+- **Optimización**: Next.js Image, Link y fuentes optimizadas
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/                    # App Router de Next.js
+│   ├── page.tsx           # Página principal con DateCards
+│   ├── layout.tsx         # Layout raíz con fuentes
+│   ├── valentine/         # Página de San Valentín
+│   └── spring/            # Página de Primavera
+├── components/            # Componentes reutilizables
+│   └── common/
+│       └── DateCard.tsx   # Componente de tarjeta de fecha
+├── features/              # Funcionalidades por dominio
+│   ├── valentine/
+│   │   ├── content/       # Contenido específico de Valentine
+│   │   └── mocks/         # Datos mock para Valentine
+│   └── spring/
+│       ├── content/       # Contenido específico de Spring
+│       └── mocks/         # Datos mock para Spring
+├── mocks/                 # Datos centralizados
+│   ├── index.ts          # Exportaciones principales
+│   ├── valentine/        # Mocks de Valentine
+│   └── spring/           # Mocks de Spring
+└── types/                 # Definiciones de TypeScript
+    ├── index.ts          # Exportaciones de tipos
+    └── DateCard.ts       # Tipos para DateCard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Convenciones de Código
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Componentes
+- **Páginas**: `function` declarations (`export default function Page()`)
+- **Componentes**: Arrow functions con `export const` (`export const Component = () => {}`)
+- **Tipos**: Centralizados en `src/types/`
+- **Mocks**: Organizados por feature en carpetas separadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Naming
+- **Archivos**: PascalCase para componentes, camelCase para utilities
+- **Componentes**: PascalCase
+- **Variables**: camelCase
+- **Constantes**: SNAKE_CASE para globales
 
-## Learn More
+## 🚀 Desarrollo
 
-To learn more about Next.js, take a look at the following resources:
+### Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clonar el repositorio
+git clone <repository-url>
+cd yxa-lov
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Instalar dependencias
+npm install
+```
 
-## Deploy on Vercel
+### Scripts Disponibles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Desarrollo
+npm run dev          # Servidor de desarrollo con Turbopack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Build y Start
+npm run build        # Build de producción
+npm start           # Servidor de producción
+
+# Calidad de Código
+npm run lint        # ESLint
+npm run typecheck   # TypeScript compiler
+npm run prettier    # Verificar formato
+npm run format      # Formatear código
+
+# Testing
+npm run test        # Vitest
+```
+
+### Variables de Entorno
+
+El proyecto no requiere variables de entorno específicas para desarrollo local.
+
+## 📸 Assets
+
+### Imágenes
+- **Valentine**: `public/valentine/` - Imágenes románticas y de San Valentín
+- **Spring**: `public/spring/` - Imágenes de primavera y flores amarillas
+
+### Fuentes
+- **Roboto**: Fuente principal del sistema (moderna y legible)
+- **Great Vibes**: Para títulos románticos (especialmente Valentine)
+- **Press Start 2P**: Para elementos retro/gaming y texto japonés
+
+## 🌟 Características Especiales
+
+### DateCards Dinámicas
+Las tarjetas de fechas especiales son completamente configurables a través de mocks:
+
+```typescript
+export const valentineCard = {
+  id: 'valentine',
+  title: 'San Valentín',
+  subtitle: 'Day of Love ♡',
+  description: 'El día donde el amor florece como sakura',
+  date: '14 de Febrero',
+  imageSrc: '/valentine/happy.jpg',  // ← Cambiar imagen aquí
+  imageAlt: "Valentine's Day celebration",
+  href: '/valentine',
+  bgGradient: 'from-pink-100 to-red-100',
+  textColor: 'text-red-600',
+  dateColor: 'text-pink-500',
+}
+```
+
+### Componentes Interactivos
+- **Valentine**: Botón "NO" que se mueve al hacer hover (easter egg)
+- **Spring**: Galería de flores amarillas con modal
+- **Animaciones**: Transiciones suaves y efectos hover
+
+### Sistema de Componentes
+- **Button**: Componente reutilizable con `clsx` para manejo dinámico de clases
+- **DateCard**: Tarjetas de fechas especiales configurables
+- **Arquitectura**: Componentes con `export const` y arrow functions
+
+## 🎌 Elementos Románticos
+
+- **Español**: Contenido principal en español
+- **Japonés**: Frases románticas como "永遠の愛 (Eien no ai - Eternal Love)"
+- **Inglés**: Algunos elementos técnicos y subtítulos
+- **Emojis**: Uso estratégico para expresar emociones
+
+## 🚀 Deployment
+
+### Vercel (Recomendado)
+```bash
+# El proyecto está optimizado para Vercel
+vercel --prod
+```
+
+### Otros Proveedores
+```bash
+npm run build
+npm start
+```
+
+## 📝 TODO / Roadmap
+
+- [ ] Agregar más fechas especiales
+- [ ] Implementar sistema de comentarios
+- [ ] Galería de fotos compartida
+- [ ] Modo oscuro romántico
+- [ ] Animaciones con Framer Motion
+- [ ] PWA support
+- [ ] Sistema de notificaciones para fechas importantes
+
+## 💖 Créditos
+
+Hecho con 💕 por Pdro para mi novia
+
+すべての愛を込めて (Subete no ai wo komete - With all my love)
+
+---
+
+*"Cada momento contigo se convierte en una fecha especial"*

@@ -1,26 +1,60 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* 💕 YxaLov Kawaii Color System */
+@theme {
+  /* Turquesa - Color principal inspirado en Hatsune Miku */
+  --color-turquoise-light: #7fefdd;
+  --color-turquoise-neutral: #40e0d0;
+  --color-turquoise-dark: #2ca5a0;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Rosa - Acentos románticos y kawaii */
+  --color-pink-light: #f9a8d4;
+  --color-pink-neutral: #ec4899;
+  --color-pink-dark: #be185d;
+
+  /* Valentine - Especial San Valentín */
+  --color-valentine-light: #fca5a5;
+  --color-valentine-neutral: #dc2626;
+  --color-valentine-dark: #991b1b;
+
+  /* Yellow - Amarillos reutilizables */
+  --color-yellow-light: #fde68a;
+  --color-yellow-neutral: #fbbf24;
+  --color-yellow-dark: #d97706;
+  
+  /* Green - Verdes reutilizables */
+  --color-green-light: #6ee7b7;
+  --color-green-neutral: #10b981;
+  --color-green-dark: #047857;
+
+  /* Kawaii Pastels - Colores suaves inspirados en anime */
+  --color-kawaii-purple: #c4b5fd;
+  --color-kawaii-blue: #93c5fd;
+  --color-kawaii-mint: #86efac;
+  --color-kawaii-peach: #fdba74;
+  --color-kawaii-lavender: #e0e7ff;
+
+  /* Grises personalizados - para override de Tailwind defaults */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Fuentes */
+  --font-base: var(--font-roboto);
+  --font-romantic: var(--font-great-vibes);
+  --font-gaming: var(--font-press-start);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: white;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
