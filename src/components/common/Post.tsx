@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from './Container'
 import { Button } from '@/components/ui/Button'
+import { HeartAnimation } from '@/components/animations/HeartAnimation'
 import type { PostContent } from '@/types/Post'
 
 interface PostProps {
@@ -11,7 +13,18 @@ interface PostProps {
 }
 
 export const Post = ({ content }: PostProps) => {
+  const [showHeartAnimation, setShowHeartAnimation] = useState(false)
+
+  const handleShareLove = () => {
+    setShowHeartAnimation(true)
+  }
+
   return (
+    <>
+      <HeartAnimation 
+        isActive={showHeartAnimation} 
+        onComplete={() => setShowHeartAnimation(false)}
+      />
     <Container className="py-16">
       <article className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
@@ -173,6 +186,7 @@ export const Post = ({ content }: PostProps) => {
               </p>
               <Button
                 className={content.navigation.shareButton.className}
+                onClick={handleShareLove}
               >
                 {content.navigation.shareButton.text}
               </Button>
@@ -192,5 +206,6 @@ export const Post = ({ content }: PostProps) => {
         </footer>
       </article>
     </Container>
+    </>
   )
 }
